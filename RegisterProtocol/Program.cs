@@ -5,22 +5,33 @@ namespace RegisterProtocol
 {
     class Program
     {
+        public static bool silent = false;
         static void Main(string[] args)
         {
-            if (args.Length == 4)
+            if (args.Length == 5)
+            {
+                if (args[4] == "silent")
+                {
+                    silent = true;
+                }
+            }
+            if (args.Length >= 4)
             {
                 if (args[3] == "add")
                 {
                     RegisterMyProtocol(args[0], args[1], args[2]);
                     Console.WriteLine("Successfully registered protocol for app " + args[2] + ".");
+                    if(!silent)
                     Console.ReadLine();
                 }
                 else if(args[3] == "remove")
                 {
                     RemoveMyProtocol(args[0], args[1], args[2]);
                     Console.WriteLine("Successfully removed protocol for app " + args[2] + ".");
+                    if(!silent)
                     Console.ReadLine();
                 }
+                
                 
             }
             else if (args.Length == 0)
@@ -36,13 +47,15 @@ namespace RegisterProtocol
                 if (func == "add")
                 {
                     RegisterMyProtocol(path, name, fullname);
-                    Console.WriteLine("Successfully registered protocol for app " + args[2] + ".");
+                    Console.WriteLine("Successfully registered protocol for app " + name + ".");
+                    if(!silent)
                     Console.ReadLine();
                 }
                 else if (func == "remove")
                 {
                     RemoveMyProtocol(path, name, fullname);
-                    Console.WriteLine("Successfully removed protocol for app " + args[2] + ".");
+                    Console.WriteLine("Successfully removed protocol for app " + name + ".");
+                    if(!silent)
                     Console.ReadLine();
                 }
                 else
@@ -54,6 +67,7 @@ namespace RegisterProtocol
             else
             {
                 Console.WriteLine("Invalid arguments. Number of arguments passed: "+args.Length+".");
+                if(!silent)
                 Console.ReadLine();
             }
         }

@@ -7,6 +7,9 @@
     <AssemblyOriginatorKeyFile>RegisterProtocol.pfx</AssemblyOriginatorKeyFile>
     <StartupObject>RegisterProtocol.Program</StartupObject>
     <ApplicationIcon />
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Authors>gregoryK07</Authors>
+    <Copyright />
   </PropertyGroup>
 
   <ItemGroup>

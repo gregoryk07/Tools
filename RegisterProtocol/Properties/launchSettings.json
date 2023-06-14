@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "RegisterProtocol": {
+      "commandName": "Project",
+      "remoteDebugEnabled": false
+    }
+  }
+}
